@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import LeadForm from '@/components/LeadForm';
 import ChatWidget from '@/components/ChatWidget';
 
@@ -57,20 +58,26 @@ export default function ParentCheckLanding() {
                     </div>
                 </header>
 
-                <div className="relative max-w-4xl mx-auto px-4 py-16 text-center">
-                    <div className="text-6xl mb-6">👨‍👩‍👧</div>
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                        Ваш ребёнок готов к экзаменам?
-                    </h1>
-                    <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                        Получите честный отчёт о готовности и персональные рекомендации от экспертов ЕГЭ
-                    </p>
-                    <button
-                        onClick={() => setShowQuiz(true)}
-                        className="px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-                    >
-                        Проверить готовность
-                    </button>
+                <div className="relative max-w-6xl mx-auto px-4 py-16">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="text-center lg:text-left">
+                            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+                                Ваш ребёнок готов к экзаменам?
+                            </h1>
+                            <p className="text-xl text-white/80 mb-8">
+                                Получите честный отчёт о готовности и персональные рекомендации от экспертов ЕГЭ
+                            </p>
+                            <button
+                                onClick={() => setShowQuiz(true)}
+                                className="px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                            >
+                                Проверить готовность
+                            </button>
+                        </div>
+                        <div className="hidden lg:block">
+                            <Image src="/hero-parents.png" alt="Родители с ребёнком" width={400} height={400} className="w-full max-w-md mx-auto drop-shadow-2xl" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -151,7 +158,7 @@ export default function ParentCheckLanding() {
                             { name: 'Марина, мама 10-классника', text: 'Теперь понимаю на что обратить внимание. Очень полезно!' },
                         ].map((review, i) => (
                             <div key={i} className="bg-white p-6 rounded-2xl shadow-sm">
-                                <p className="text-gray-600 mb-4">"{review.text}"</p>
+                                <p className="text-gray-600 mb-4">&ldquo;{review.text}&rdquo;</p>
                                 <p className="font-medium text-purple-600">{review.name}</p>
                             </div>
                         ))}

@@ -1,5 +1,6 @@
 import ChatWidget from '@/components/ChatWidget';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -11,36 +12,41 @@ export default function Home() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse delay-1000"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-purple-300 text-sm mb-6">
-              🚀 Лендинги + AI-агенты для квалифицированных лидов
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-purple-300 text-sm mb-6">
+                🚀 Лендинги + AI-агенты для квалифицированных лидов
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Превращаем посетителей в{' '}
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  горячих лидов
+                </span>
+              </h1>
+
+              <p className="text-xl text-gray-300 mb-8">
+                Создаём конверсионные лендинги с AI-агентами, которые квалифицируют
+                посетителей 24/7 и передают только готовых к покупке клиентов.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a
+                  href="#demo"
+                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-purple-500/25 hover:scale-105"
+                >
+                  Смотреть примеры
+                </a>
+                <a
+                  href="#contact"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20"
+                >
+                  Заказать лендинг
+                </a>
+              </div>
             </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Превращаем посетителей в{' '}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                горячих лидов
-              </span>
-            </h1>
-
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Создаём конверсионные лендинги с AI-агентами, которые квалифицируют
-              посетителей 24/7 и передают только готовых к покупке клиентов.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#demo"
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-purple-500/25 hover:scale-105"
-              >
-                Смотреть примеры
-              </a>
-              <a
-                href="#contact"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all border border-white/20"
-              >
-                Заказать лендинг
-              </a>
+            <div className="hidden lg:block">
+              <Image src="/landing-services.png" alt="Сервис создания лендингов" width={500} height={500} className="w-full max-w-lg mx-auto drop-shadow-2xl" />
             </div>
           </div>
         </div>

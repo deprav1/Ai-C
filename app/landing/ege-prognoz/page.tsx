@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import LeadForm from '@/components/LeadForm';
 import ChatWidget from '@/components/ChatWidget';
 
@@ -46,20 +47,26 @@ export default function EgePrognozLanding() {
                     </div>
                 </header>
 
-                <div className="relative max-w-4xl mx-auto px-4 py-16 text-center">
-                    <div className="text-6xl mb-6">🎯</div>
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                        Узнай свой прогноз баллов на ЕГЭ за 7 минут
-                    </h1>
-                    <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                        Пройди короткий тест и получи реалистичную оценку своей подготовки с рекомендациями по улучшению
-                    </p>
-                    <button
-                        onClick={() => setShowQuiz(true)}
-                        className="px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-                    >
-                        Пройти тест бесплатно
-                    </button>
+                <div className="relative max-w-6xl mx-auto px-4 py-16">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="text-center lg:text-left">
+                            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+                                Узнай свой прогноз баллов на ЕГЭ за 7 минут
+                            </h1>
+                            <p className="text-xl text-white/80 mb-8">
+                                Пройди короткий тест и получи реалистичную оценку своей подготовки с рекомендациями по улучшению
+                            </p>
+                            <button
+                                onClick={() => setShowQuiz(true)}
+                                className="px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                            >
+                                Пройти тест бесплатно
+                            </button>
+                        </div>
+                        <div className="hidden lg:block">
+                            <Image src="/hero-students.png" alt="Ученик готовится к ЕГЭ" width={400} height={400} className="w-full max-w-md mx-auto drop-shadow-2xl" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -139,7 +146,7 @@ export default function EgePrognozLanding() {
                                     <span className="text-3xl">{review.avatar}</span>
                                     <span className="font-medium">{review.name}</span>
                                 </div>
-                                <p className="text-gray-600">"{review.text}"</p>
+                                <p className="text-gray-600">&ldquo;{review.text}&rdquo;</p>
                             </div>
                         ))}
                     </div>
