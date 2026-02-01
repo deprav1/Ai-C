@@ -1,0 +1,15 @@
+# Netlify Configuration for Next.js
+# https://docs.netlify.com/frameworks/next-js/
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Environment variables are set in Netlify Dashboard
+# Settings → Environment variables
+
+# Redirects (optional)
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
